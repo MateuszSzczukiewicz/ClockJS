@@ -49,11 +49,23 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.clock__main--analog {
     width: 300px;
     height: 300px;
-    border-radius: 50%;
     border: 5px solid white;
-    z-index: 2;
+    border-radius: 50%;
+    display: none;
+}
+
+.clock__main--digital {
+    position: absolute;
+    width: 580px;
+    height: 300px;
+    border-radius: unset;
+    background-color: transparent;
 }
 
 .clock__center {
@@ -149,6 +161,17 @@ body {
 .clock__number:nth-child(14) {
     transform: rotate(330deg);
 }
+
+.clock__time {
+    text-align: center;
+    font-size: 72px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 20px;
+    position: relative;
+    -webkit-box-reflect: below 10px linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4));}
 
 .clock__switch {
     align-self: center;
