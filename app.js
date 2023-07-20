@@ -10,18 +10,22 @@ const clockDigital = document.getElementById('clock-digital');
 
 const clockSwitchButton = document.getElementById('clock-switch');
 
+const clockSvgCircle = document.getElementById('clock-svgCircle');
+
 const clockCenter = document.querySelector('.clock__center')
 const clockNumbers = document.querySelectorAll('.clock__number')
 
-const updateClockHands = () => {
+const updateAnalogTime = () => {
     const now = new Date();
     const seconds = now.getSeconds();
     const minutes = now.getMinutes();
     const hours = now.getHours();
 
+    const secondsRotation = `calc(${942 - (942 * seconds) / 59}px)`;
     const minutesRotation = `translateX(-50%) rotate(${minutes * 6 + seconds / 10}deg)`;
     const hoursRotation = `translateX(-50%) rotate(${(hours % 12) * 30 + minutes / 2}deg)`;
 
+    clockSvgCircle.style.strokeDashoffset = secondsRotation;
     handMinutes.style.transform = minutesRotation;
     handHours.style.transform = hoursRotation;
 }
@@ -60,7 +64,7 @@ const clockNumbersChange = () => {
     });
 }
 
-setInterval(updateClockHands, 1000);
+setInterval(updateAnalogTime, 1000);
 setInterval(updateDigitalTime, 1000);
 setInterval(clockCenterChange, 1000);
 setInterval(clockNumbersChange, 1000);

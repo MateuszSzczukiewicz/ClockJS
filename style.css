@@ -81,6 +81,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-image: linear-gradient(#ff8a00, #e52e71);
     z-index: 2;
 }
 
@@ -167,6 +168,7 @@ body {
     transform: rotate(330deg);
 }
 
+
 .clock__time {
     text-align: center;
     font-size: 72px;
@@ -176,7 +178,32 @@ body {
     -webkit-text-fill-color: transparent;
     letter-spacing: 20px;
     position: relative;
-    -webkit-box-reflect: below 10px linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4));}
+    -webkit-box-reflect: below 10px linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4));
+}
+
+.clock__seconds-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 0;
+    top: 0;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    z-index: 1000;
+}
+
+.clock__svg {
+    overflow: visible;
+}
+
+.clock__svgCircle {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 4;
+    stroke-dasharray: 942;
+    stroke-dashoffset: 942;
+    transition: .2s linear;
+}
 
 .clock__switch {
     align-self: center;

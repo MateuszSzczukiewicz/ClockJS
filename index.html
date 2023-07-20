@@ -28,6 +28,17 @@
         <div class="clock__number">10</div>
         <div class="clock__number">11</div>
         <div class="clock__number">12</div>
+        <div class="clock__seconds-circle">
+          <svg class="clock__svg">
+            <defs>
+              <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ff8a00"></stop>
+                <stop offset="100%" stop-color="#e52e71"></stop>
+              </linearGradient>
+            </defs>
+            <circle class="clock__svgCircle" id="clock-svgCircle" cx="150" cy="150" r="150" stroke="url(#linear)"></circle>
+          </svg>
+        </div>
       </main>
       <main class="clock__main clock__main--digital clock__main--isDisabled" id="clock-digital">
         <p class="clock__time">
