@@ -12,7 +12,7 @@
   <section class="clock">
     <div class="clock__wrapper">
       <h1 class="clock__title">Zegarek w VanillaJS</h1>
-      <main class="clock__main clock__main--analog">
+      <main class="clock__main clock__main--analog " id="clock-analog">
         <div class="clock__center"></div>
         <div class="clock__hand-minutes" id="hand-minutes"></div>
         <div class="clock__hand-hours" id="hand-hours"></div>
@@ -29,16 +29,16 @@
         <div class="clock__number">11</div>
         <div class="clock__number">12</div>
       </main>
-      <main class="clock__main clock__main--digital">
+      <main class="clock__main clock__main--digital clock__main--isDisabled" id="clock-digital">
         <p class="clock__time">
-          <span></span>
+          <span id="digital-hours"></span>
           :
-          <span></span>
+          <span id="digital-minutes"></span>
           :
-          <span></span>
+          <span id="digital-seconds"></span>
         </p>
       </main>
-      <button class="clock__switch" type="button">Przełącz tryb</button>
+      <button class="clock__switch" id="clock-switch" type="button">Przełącz tryb</button>
     </div>
   </section>
   <script src="app.js"></script>
