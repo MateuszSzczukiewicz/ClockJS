@@ -15,6 +15,10 @@ const clockSvgCircle = document.getElementById('clock-svgCircle');
 const clockCenter = document.querySelector('.clock__center')
 const clockNumbers = document.querySelectorAll('.clock__number')
 
+const clockSection = document.getElementById('clock-section');
+let isDragging = false;
+let initialX, initialY;
+
 const updateAnalogTime = () => {
     const now = new Date();
     const seconds = now.getSeconds();
@@ -64,8 +68,32 @@ const clockNumbersChange = () => {
     });
 }
 
+const moveClockSection = e => {
+    if (isDragging) {
+        const x = e.clientX - initialX;
+        const y = e.clientY - initialY;
+
+        clockSection.style.left = x + 'px';
+        clockSection.style.top = y + 'px';
+    }
+};
+
+const startDragging = e => {
+    isDragging = true;
+
+    initialX = e.clientX - clockSection.offsetLeft;
+    initialY = e.clientY - clockSection.offsetTop;
+}
+
+const stopDragging = () => {
+    isDragging = false;
+}
+
 setInterval(updateAnalogTime, 1000);
 setInterval(updateDigitalTime, 1000);
 setInterval(clockCenterChange, 1000);
 setInterval(clockNumbersChange, 1000);
 clockSwitchButton.addEventListener('click', clockSwitch);
+clockSection.addEventListener('mousedown', startDragging)
+clockSection.addEventListener('mouseup', stopDragging)
+document.addEventListener('mousemove', moveClockSection)
