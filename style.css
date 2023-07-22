@@ -5,8 +5,13 @@
     user-select: none;
 }
 
+:root {
+    --primary-color: #ff8a00;
+    --secondary-color: #e52e71;
+}
+
 body {
-    background-color: black;
+    background-color: #000;
 }
 
 .clock {
@@ -16,7 +21,7 @@ body {
     left: 50%;
     width: 640px;
     height: 640px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1.25);
 }
 
 .clock:hover {
@@ -34,14 +39,14 @@ body {
 .clock__title {
     font-size: 72px;
     color: white;
-    text-shadow: 0 0 5px #ff8a00,
-    0 0 10px #ff8a00,
-    0 0 15px #ff8a00,
-    0 0 20px #e52e71,
-    0 0 30px #e52e71,
-    0 0 40px #e52e71,
-    0 0 55px #e52e71,
-    0 0 75px #e52e71;
+    text-shadow: 0 0 5px var(--primary-color),
+    0 0 10px var(--primary-color),
+    0 0 15px var(--primary-color),
+    0 0 20px var(--secondary-color),
+    0 0 30px var(--secondary-color),
+    0 0 40px var(--secondary-color),
+    0 0 55px var(--secondary-color),
+    0 0 75px var(--secondary-color);
 }
 
 .clock__main {
@@ -56,7 +61,6 @@ body {
     display: block;
     width: 300px;
     height: 300px;
-    /*border: 5px solid white;*/
     border-radius: 50%;
 }
 
@@ -81,7 +85,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: linear-gradient(#ff8a00, #e52e71);
+    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
     z-index: 2;
 }
 
@@ -92,7 +96,7 @@ body {
     bottom: 50%;
     left: 50%;
     border-radius: 20px 20px;
-    background-color: #ff8a00;
+    background-color: var(--primary-color);
     transform-origin: bottom;
     z-index: 1;
 }
@@ -105,7 +109,7 @@ body {
     left: 50%;
     transform-origin: bottom;
     border-radius: 20px 20px;
-    background-color: #e52e71;
+    background-color: var(--secondary-color);
     z-index: 0;
 }
 
@@ -118,7 +122,7 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
-    background-image: linear-gradient(#ff8a00, #e52e71);
+    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -172,7 +176,7 @@ body {
 .clock__time {
     text-align: center;
     font-size: 72px;
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -215,19 +219,19 @@ body {
     height: 100px;
     transition: 0.4s;
     border: 0;
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .clock__switch:hover {
-    box-shadow: 0 0 5px #ff8a00,
-    0 0 10px #ff8a00,
-    0 0 15px #ff8a00,
-    0 0 20px #e52e71,
-    0 0 30px #e52e71,
-    0 0 40px #e52e71,
-    0 0 55px #e52e71,
-    0 0 75px #e52e71;
+    box-shadow: 0 0 5px var(--primary-color),
+    0 0 10px var(--primary-color),
+    0 0 15px var(--primary-color),
+    0 0 20px var(--secondary-color),
+    0 0 30px var(--secondary-color),
+    0 0 40px var(--secondary-color),
+    0 0 55px var(--secondary-color),
+    0 0 75px var(--secondary-color);
 }
